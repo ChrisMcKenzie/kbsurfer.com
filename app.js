@@ -56,9 +56,13 @@ app.get( '/pages/:p', function ( req, res ) {
 });
 
 app.post( '/push', function( req, res ) {
-  console.log(req.params);
-  console.log(req);
+  // Do git pull of posts!
+
 });
 
-console.log("Running server on port 80");
-app.listen( 80 );
+try {
+  console.log("Running server on port 80");
+  app.listen( 80 );
+} catch(error){
+  console.log('Unable to Start Server', error);
+}
