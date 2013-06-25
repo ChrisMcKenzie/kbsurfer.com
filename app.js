@@ -60,9 +60,5 @@ app.post( '/push', function( req, res ) {
 
 });
 
-try {
-  console.log("Running server on port 80");
-  app.listen( 80 );
-} catch(error){
-  console.log('Unable to Start Server', error);
-}
+console.log("Running server on port 80");
+app.listen( 80 );
