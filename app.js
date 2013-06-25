@@ -56,7 +56,7 @@ app.get( '/pages/:p', function ( req, res ) {
 });
 
 app.post( '/push', function( req, res ) {
-  console.log(req.params.payload);
+  console.log(req.params);
 });
 
 console.log("Running server on port 80");
