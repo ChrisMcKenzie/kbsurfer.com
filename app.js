@@ -53,7 +53,10 @@ app.get( '/pages/:p', function ( req, res ) {
     page.url = '/pages/' + req.params.p;
     res.render('pages', {page: page});
   });
+});
 
+app.post( '/push', function( req, res ) {
+  console.log(req.params.payload);
 });
 
 app.listen( 3000 );
