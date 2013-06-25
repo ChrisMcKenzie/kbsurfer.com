@@ -59,4 +59,5 @@ app.post( '/push', function( req, res ) {
   console.log(req.params.payload);
 });
 
+console.log("Running server on port 80");
 app.listen( 80 );
