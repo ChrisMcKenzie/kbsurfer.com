@@ -1,0 +1,29 @@
+!!!
+html
+  head
+    title= 'Keyboardsurfer'
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/font-awesome.css')
+    link(rel='stylesheet', href='/css/style.css')
+  body
+    header
+      a(href="/")
+        img(src="/img/me.jpg", alt="", class="circular shadow")
+      .row-fluid
+        nav
+          ul
+            li
+              a(href="/") Home
+      br(class="clear")
+    block content
+
+    footer
+      h5 A little about me
+      p
+        | My name is <span class="highlight">Christopher McKenzie</span>, I am a <span class="highlight">Web Application Developer</span> In Victorville, Ca; I am currently employed by Excelsior Charter Schools for which I develop proprietary management tools.
+      a(href="https://plus.google.com/112997148822003661332")
+        button(class="google-plus")
+          i(class="icon-google-plus")
+    script(type="text/javascript", src="/js/jquery.js")
+    script(type="text/javascript", src="/js/app.js")

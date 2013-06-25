@@ -1,0 +1,7 @@
+extends layout
+  .page-header
+    h3 All Tags
+  ul
+    - each tag in tagList
+      li
+        a(href=tagUrl(tag)) #{tag}

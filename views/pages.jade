@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  section
+    h4.title
+      a(href=page.url)
+      = page.title
+
+    div.content
+      != page.content
