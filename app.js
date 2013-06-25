@@ -10,7 +10,7 @@ var
 
 poet.set({
   postsPerPage : 3,
-  posts        : './_posts',
+  posts        : './content/_posts',
   metaFormat   : 'json',
   readMoreLink : function ( post ) {
     //var anchor = '<a href="'+post.url+'" title="Read more of '+post.title+'">read more</a>';
@@ -35,7 +35,7 @@ app.locals.pretty = true;
 app.get( '/', function ( req, res ) { res.render('index') });
 app.get( '/pages/:p', function ( req, res ) {
   var page = {}
-  fs.readFile( '_pages/' + req.params.p + '.md', 'utf-8', function ( err, data ) {
+  fs.readFile( '/content/_pages/' + req.params.p + '.md', 'utf-8', function ( err, data ) {
     var
       t = jsonFm( data ),
       body = t.body,
