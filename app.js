@@ -9,7 +9,7 @@ var
   html2text = require( 'html-to-text'),
   markdown = require( 'node-markdown' ).Markdown,
   commander    = require('commander'),
-  sys     = require('sys');
+  exec=require('child_process').exec;
 
 //handle CLI Arguments.
 commander
@@ -82,7 +82,7 @@ app.configure('production', function(){
 app.post( '/push', function( req, res ) {
   // Do git pull of posts!
   console.log("Pulling in the new stuff!");
-  sys.exec('post-receive.sh', function(err, stdout, stderr){
+  exec('./post-receive.sh', function(err, stdout, stderr){
     if(err || stderr){
       console.error(err, stderr);
     }
