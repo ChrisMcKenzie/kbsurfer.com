@@ -80,7 +80,14 @@ app.configure('production', function(){
 
 app.post( '/push', function( req, res ) {
   // Do git pull of posts!
+  console.log("Pulling in the new stuff!");
+  exec('post-receive.sh', function(err, stdout, stderr){
+    if(err || stderr){
+      console.error(err, stderr);
+    }
 
+    console.log(stdout);
+  });
 });
 
 // Start server
