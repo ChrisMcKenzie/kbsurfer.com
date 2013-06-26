@@ -8,7 +8,8 @@ var
   jsonFm   = require( 'json-front-matter' ).parse,
   html2text = require( 'html-to-text'),
   markdown = require( 'node-markdown' ).Markdown,
-  commander    = require('commander');
+  commander    = require('commander'),
+  sys     = require('sys');
 
 //handle CLI Arguments.
 commander
@@ -81,7 +82,7 @@ app.configure('production', function(){
 app.post( '/push', function( req, res ) {
   // Do git pull of posts!
   console.log("Pulling in the new stuff!");
-  exec('post-receive.sh', function(err, stdout, stderr){
+  sys.exec('post-receive.sh', function(err, stdout, stderr){
     if(err || stderr){
       console.error(err, stderr);
     }
