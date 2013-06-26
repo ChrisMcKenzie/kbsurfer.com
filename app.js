@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var
   express  = require( 'express' ),
   app      = express(),
@@ -6,11 +7,24 @@ var
   moment   = require('moment'),
   jsonFm   = require( 'json-front-matter' ).parse,
   html2text = require( 'html-to-text'),
-  markdown = require( 'node-markdown' ).Markdown;
+  markdown = require( 'node-markdown' ).Markdown,
+  commander    = require('commander');
+
+//handle CLI Arguments.
+commander
+.version('kbsurfer.com Version 0.0.1a')
+.option('-p, --port [port]', 'Set Port for server to run on.', 3000)
+.option('-c, --content [content]', 'Set the directory in which your content directoies are located', './content')
+.parse(process.argv);
+
+var port      = commander.port,
+    content   = commander.content,
+    posts     = content + '/_posts',
+    pages     = content + '/_pages';
 
 poet.set({
   postsPerPage : 3,
-  posts        : './content/_posts',
+  posts        : posts,
   metaFormat   : 'json',
   readMoreLink : function ( post ) {
     //var anchor = '<a href="'+post.url+'" title="Read more of '+post.title+'">read more</a>';
@@ -35,7 +49,7 @@ app.locals.pretty = true;
 app.get( '/', function ( req, res ) { res.render('index') });
 app.get( '/pages/:p', function ( req, res ) {
   var page = {}
-  fs.readFile( '/content/_pages/' + req.params.p + '.md', 'utf-8', function ( err, data ) {
+  fs.readFile( pages + req.params.p + '.md', 'utf-8', function ( err, data ) {
     var
       t = jsonFm( data ),
       body = t.body,
@@ -55,10 +69,21 @@ app.get( '/pages/:p', function ( req, res ) {
   });
 });
 
+app.configure('development', function(){
+    app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+});
+
+app.configure('production', function(){
+    app.use(express.errorHandler());
+});
+
+
 app.post( '/push', function( req, res ) {
   // Do git pull of posts!
 
 });
 
-console.log("Running server on port 80");
-app.listen( 80 );
+// Start server
+app.listen(commander.port, function(){
+    console.log("Express server listening on port %d in %s mode", commander.port, app.settings.env);
+});

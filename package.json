@@ -10,7 +10,8 @@
     "node-markdown": ">= 0.1.1",
     "json-front-matter": ">= 0.1.x",
     "front-matter": ">= 0.1.x",
-    "html-to-text" :    ">= 0.0.5"
+    "html-to-text" :    ">= 0.0.5",
+    "commander": ">= 1.1"
   },
   "scripts": {
     "start": "node ./app.js"
