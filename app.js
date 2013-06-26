@@ -82,7 +82,7 @@ app.configure('production', function(){
 app.post( '/push', function( req, res ) {
   // Do git pull of posts!
   console.log("Pulling in the new stuff!");
-  exec('git pull --yes-recurse-submodules', function(err, stdout, stderr){
+  exec('git pull --recurse-submodules', function(err, stdout, stderr){
     if(err || stderr){
       console.error(err, stderr);
     }
