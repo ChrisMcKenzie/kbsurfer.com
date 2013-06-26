@@ -92,9 +92,10 @@ start() {
     # The pidfile contains the child process pid, not the forever process pid.
     # We're only using it as a marker for whether or not the process is
     # running.
-    forever --pidFile $PIDFILE --sourceDir $APPLICATION_DIRECTORY \
+    cd $APPLICATION_DIRECTORY
+    forever --pidFile $PIDFILE \
         -a -l $LOGFILE --minUptime 5000 --spinSleepTime 2000 \
-        start $APPLICATION_START &
+        start $APPLICATION_START -p 80 &
     RETVAL=$?
 }
 
