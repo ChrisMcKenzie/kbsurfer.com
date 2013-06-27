@@ -20,8 +20,6 @@ a:hover {
     color: #ff6644;
 }
 
-/* Glyph, by Harry Roberts */
-
 hr {
     padding: 0;
     border: none;
@@ -70,9 +68,7 @@ input:focus, textarea:focus {
 }
 
 
-/* --------------------------------------------------------------
-Typography
--------------------------------------------------------------- */
+/*=========={ TYPE }==========*/
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Open Sans', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight: bold;
@@ -99,9 +95,7 @@ strong  { font-weight: bold;}
 ul {margin-bottom: 20px;}
 
 
-/* --------------------------------------------------------------
-Buttons
--------------------------------------------------------------- */
+/*=========={ BUTTONS }==========*/
 button, a.btn {
     display: inline-block;
     border: 0;
@@ -154,16 +148,13 @@ button.light:hover, a.btn.light:hover {
   padding-left: 20px;
 }
 
-
-/* --------------------------------------------------------------
-Header
--------------------------------------------------------------- */
+/*=========={ HEADER }==========*/
 header {
     width: auto;
     max-width: 860px;
     margin: 0 auto;
-    margin-top: 80px;
-    margin-bottom: 0px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     padding: 0 30px;
     position: relative;
     text-align: center;
@@ -239,9 +230,7 @@ header nav ul li a:hover {
 }
 
 
-/* --------------------------------------------------------------
-Posts
--------------------------------------------------------------- */
+/*=========={ POSTS }==========*/
 section {
     display: block;
     position: relative;
@@ -413,13 +402,19 @@ section .hashtags:hover {
 
 section .hashtags .hashtag:first-child {
   opacity: 1;
+  height:26px;
   background-color: #F5F5F5;
+}
+
+section .hashtags:hover .hashtag {
+  opacity: 1;
+  height:26px;
 }
 
 section .hashtags .hashtag {
   float: right;
   clear: both;
-  height: 26px;
+  height: 0px;
   width: 80px;
   line-height: 26px;
   font-weight: bold;
@@ -429,10 +424,10 @@ section .hashtags .hashtag {
   background: #fff;
   opacity: 0;
   text-align: right;
-  -webkit-transition:all .30s ease-in-out;
-  -moz-transition:all .30s ease-in-out;
-  -o-transition:all .30s ease-in-out;
-  transition:all .30s ease-in-out;
+  -webkit-transition:opacity .2s ease-in-out;
+  -moz-transition:opacity .2s ease-in-out;
+  -o-transition:opacity .2s ease-in-out;
+  transition:opacity .2s ease-in-out;
 }
 
 section .hashtags .hashtag:hover {
@@ -471,62 +466,7 @@ Metadata
 }
 
 
-/* --------------------------------------------------------------
-Comments
--------------------------------------------------------------- */
-.comments h5 {
-    margin: 60px 0 30px 0;
-}
-
-.comment .avatar {
-    float: left;
-    margin: 0 20px 20px 0;
-}
-
-.comment h5 {
-    color: #555759;
-    margin: 20px 0 0 0;
-}
-
-.comment .comment-date {
-    font-size: 14px;
-    margin-bottom: 20px;
-    color: #777;
-}
-
-.comment p {
-    margin-left: 70px;
-    margin-bottom: 40px;
-}
-
-.reply {
-    margin-left: 70px;
-}
-
-.comment-form h6 {
-    text-transform: uppercase;
-    color: #aaa;
-}
-
-.comment-form input {
-    width: 100%;
-    margin-bottom: 40px;
-}
-
-.comment-form textarea {
-    width: 100%;
-    min-height: 140px;
-    margin-bottom: 40px;
-}
-
-.comment-form button {
-    float: right;
-}
-
-
-/* --------------------------------------------------------------
-Pagination
--------------------------------------------------------------- */
+/*=========={ PAGINATION }==========*/
 .pagination {
     width: 100%;
     text-align: center;
@@ -537,9 +477,7 @@ Pagination
 }
 
 
-/* --------------------------------------------------------------
-Archive
--------------------------------------------------------------- */
+/*=========={ ARCHIVES }==========*/
 .archives {
     padding-top: 160px;
     padding-left: 5px;
@@ -574,9 +512,7 @@ Archive
 }
 
 
-/* --------------------------------------------------------------
-Contact form
--------------------------------------------------------------- */
+/*=========={ CONTACT FORM }==========*/
 .contact h6 {
     text-transform: uppercase;
     color: #aaa;
@@ -615,9 +551,7 @@ label.error {
 }
 
 
-/* --------------------------------------------------------------
-Footer
--------------------------------------------------------------- */
+/*=========={ FOOTER }==========*/
 footer {
     max-width: 780px;
     margin: 0 auto;
@@ -630,7 +564,7 @@ footer h4, footer h5, footer h6 {
     color: #aaa28c;
 }
 
-/* Social buttons */
+/*=========={ SOCIAL }==========*/
 button.facebook, button.twitter, button.linkedin, button.google_plus, button.pinterest {
     height: 40px;
     width: 40px;
@@ -709,9 +643,7 @@ Twitter
     display: block;
 }
 
-/* --------------------------------------------------------------
-Media queries
--------------------------------------------------------------- */
+/*=========={ MEDIA QUERIES }==========*/
 @media only screen and (max-width: 767px) {
     header, section, section.quote {
         padding: 20px;
@@ -725,7 +657,7 @@ Media queries
 
     header {
         margin-top: 20px;
-        margin-bottom: 0;
+        margin-bottom: 30px;
         padding-bottom: 0;
     }
 
