@@ -288,6 +288,12 @@ section {
     margin-bottom: -10px;
 }
 
+.post-video iframe{
+  margin-bottom: -10px;
+  width: 100%;
+  height: 450px;
+}
+
 section .date {
     position: absolute;
     top: 80px;

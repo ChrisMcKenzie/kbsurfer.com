@@ -2,7 +2,11 @@
     .post-image
       img(src=post.image)
 - else if(post.header)
-    .post-header!= post.header
+    .post-header
+      != post.header
+- else if(post.video)
+    .post-video
+      != post.video
 section
   div
     h4.title
