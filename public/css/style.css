@@ -564,6 +564,16 @@ footer h4, footer h5, footer h6 {
     color: #aaa28c;
 }
 
+footer .hosting {
+  float: right;
+  margin-left: 20px;
+}
+
+footer .node {
+  float: right;
+  margin-left: 20px;
+}
+
 /*=========={ SOCIAL }==========*/
 button.facebook, button.twitter, button.linkedin, button.google_plus, button.pinterest {
     height: 40px;
