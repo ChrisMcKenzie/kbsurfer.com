@@ -1,3 +1,5 @@
 node_modules/*
 _posts/
 _pages/
+
+public/css/style.css

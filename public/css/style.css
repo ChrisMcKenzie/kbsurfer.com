@@ -580,7 +580,7 @@ footer .node {
 }
 
 /*=========={ SOCIAL }==========*/
-button.facebook, button.twitter, button.google-plus {
+button.facebook, button.twitter, button.google-plus, button.github {
     height: 40px;
     width: 40px;
     padding: 13px;
@@ -610,6 +610,16 @@ button.google_plus {
 
 button.google_plus:hover {
     background: #373737;
+}
+
+button.github {
+    background: #f3f3f3;
+    color: #333;
+}
+
+button.github:hover {
+    background: #f9f9f9;
+    color:#333;
 }
 
 
