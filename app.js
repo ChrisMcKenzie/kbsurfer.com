@@ -2,7 +2,7 @@
 var
   express  = require( 'express' ),
   app      = express(),
-  poet     = require( 'poet' )( app ),
+  Poet     = require( 'poet' ),
   fs       = require( 'fs' ),
   moment   = require('moment'),
   jsonFm   = require( 'json-front-matter' ).parse,
@@ -23,19 +23,16 @@ var port      = commander.port,
     posts     = content + '/_posts',
     pages     = content + '/_pages';
 
-poet.set({
-  postsPerPage : 3,
-  posts        : posts,
-  metaFormat   : 'json',
-  readMoreLink : function ( post ) {
-    //var anchor = '<a href="'+post.url+'" title="Read more of '+post.title+'">read more</a>';
-    return '<a href="'+post.url+'" title="Read more of '+post.title+'" class="btn">Read More</a>';
-  },
-}).createPostRoute( '/post/:post', 'post' )
-  .createPageRoute( '/page/:page', 'page' )
-  .createTagRoute( '/tags/:tag', 'tag' )
-  .createCategoryRoute( '/category/:category', 'category' )
-  .init();
+var p = Poet(app, {
+  posts: posts,
+  postsPerPage: 5,
+  metaFormat: 'json',
+  readMoreLink: '<a href="{post.link}" class="btn">{post.title}</a>'
+});
+
+p.init().then(function () {
+  // ready to go!
+});
 
 app.set( 'view engine', 'jade' );
 app.set( 'views', __dirname + '/views' );
