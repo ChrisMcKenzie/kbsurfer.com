@@ -5,9 +5,6 @@ var
   Poet     = require( 'poet' ),
   fs       = require( 'fs' ),
   moment   = require('moment'),
-  jsonFm   = require( 'json-front-matter' ).parse,
-  html2text = require( 'html-to-text'),
-  markdown = require( 'node-markdown' ).Markdown,
   commander    = require('commander'),
   exec=require('child_process').exec;
 
@@ -23,50 +20,34 @@ var port      = commander.port,
     posts     = content + '/_posts',
     pages     = content + '/_pages';
 
-var p = Poet(app, {
+var poet = Poet(app, {
+  postsPerPage: 3,
   posts: posts,
-  postsPerPage: 5,
   metaFormat: 'json',
-  readMoreLink: '<a href="{post.link}" class="btn">{post.title}</a>'
+  readMoreLink:  function readMoreLink (post) {
+    var anchor = '<a href="' + post.url + '" class="btn"';
+    anchor += ' title="Read more of ' + post.title + '">read more</a>';
+    return '<p>' + anchor + '</p>';
+  }
 });
 
-p.init().then(function () {
-  // ready to go!
+poet.watch(function () {
+  // watcher reloaded
+  console.log('Reloaded...');
+}).init().then(function () {
+  // Ready to go!
 });
 
 app.set( 'view engine', 'jade' );
 app.set( 'views', __dirname + '/views' );
 app.use(express.compress());
 app.use( express.static( __dirname + '/public', { maxAge: 31536000 } ));
-app.use( app.router );
+app.use( app.routes );
 app.locals({
   moment: moment
 });
 
 app.locals.pretty = true;
-
-app.get( '/', function ( req, res ) { res.render('index') });
-app.get( '/pages/:p', function ( req, res ) {
-  var page = {}
-  fs.readFile( pages + req.params.p + '.md', 'utf-8', function ( err, data ) {
-    var
-      t = jsonFm( data ),
-      body = t.body,
-      attributes = t.attributes;
-      //fileName = req.params.p.replace( /\.[^\.]*$/, '' );
-
-    Object.keys( attributes ).forEach(function ( p ) {
-      page[ p ] = attributes[ p ];
-    });
-    if ( !page.date ) {
-      page.date = new Date();
-    }
-    page.content = markdown( body );
-    //page.slug = fileName;
-    page.url = '/pages/' + req.params.p;
-    res.render('pages', {page: page});
-  });
-});
 
 app.configure('development', function(){
     app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
@@ -76,6 +57,7 @@ app.configure('production', function(){
     app.use(express.errorHandler());
 });
 
+app.get('/', function (req, res) { res.render('index');});
 
 app.post( '/push', function( req, res ) {
   // Do git pull of posts!
@@ -92,5 +74,5 @@ app.post( '/push', function( req, res ) {
 
 // Start server
 app.listen(commander.port, function(){
-    console.log("Express server listening on port %d in %s mode", commander.port, app.settings.env);
+    console.log("kbsurfer.com listening on port %d in %s mode", commander.port, app.settings.env);
 });

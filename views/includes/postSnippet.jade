@@ -7,7 +7,7 @@
 - else if(post.video)
     .post-video
       != post.video
-section
+section.post
   div
     h4.title
       a(href=post.url)
@@ -16,7 +16,7 @@ section
 
     div(class="hashtags")
       each tag in post.tags
-        a(href="#{tagUrl(tag)}", class="hashtag") #{tag}
+       a(href=tagUrl(tag), class="hashtag") #{tag}
 
     div.content
       != post.preview
