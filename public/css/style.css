@@ -146,28 +146,60 @@ button.light:hover, a.btn.light:hover {
 
 /*=========={ HEADER }==========*/
 header {
-    width: auto;
-    height: 250px;
-    max-width: 100%;
-    margin: 0 auto;
-    /* margin-top: 50px; */
-    margin-bottom: 20px;
-    padding: 50px 30px;
-    background: -moz-linear-gradient(transparent 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0.1) 50%,rgba(0,0,0,0.3) 100%);, url(../img/bg3.jpg) no-repeat center top;
-    background: linear-gradient(transparent 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0.1) 50%,rgba(0,0,0,0.3) 100%), url(../img/bg3.jpg) no-repeat center top;
-    -webkit-background-size: 100% 100%;  
-    -moz-background-size: 100% 100%;  
-    background-size: 100% 100%;
-    position: relative;
-    text-align: center;
-    -webkit-box-sizing: border-box;     /* Safari/Chrome, other WebKit */
-       -moz-box-sizing: border-box;     /* Firefox, other Gecko */
-            box-sizing: border-box;     /* Opera/IE 8+ */
+  width: auto;
+  height: 250px;
+  max-width: 100%;
+  margin: 0 auto;
+  /* margin-top: 50px; */
+  margin-bottom: 20px;
+  padding: 50px 30px;
+  background: -moz-linear-gradient(transparent 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0.1) 50%,rgba(0,0,0,0.3) 100%);, url(../img/bg3.jpg) no-repeat center top;
+  background: linear-gradient(transparent 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0.1) 50%,rgba(0,0,0,0.3) 100%), url(../img/bg3.jpg) no-repeat center top;
+  -webkit-background-size: 100% 100%;  
+  -moz-background-size: 100% 100%;  
+  background-size: 100% 100%;
+  position: relative;
+  text-align: center;
+  -webkit-box-sizing: border-box;     /* Safari/Chrome, other WebKit */
+     -moz-box-sizing: border-box;     /* Firefox, other Gecko */
+          box-sizing: border-box;     /* Opera/IE 8+ */
 }     
+
+header.fixed {
+  width: 100%;
+  height: 65px;
+  padding: 5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: left;
+  background: rgba(0,0,0,.7);
+  background-position: 100;
+  z-index: 1000;
+}
+
+header.fixed .menu-button {
+  width: 45px;
+  height: 45px;
+  float: left;
+  margin-left: 10px;
+}
+
+header.fixed .menu-button img {
+  width: 45px;
+  height: 45px;
+  margin-top: 5px;
+}
+
+header.fixed .information { 
+  /* float: left; */
+  width: 300px;
+  margin: 15px 70px;
+}
 
 /*========={ HEADER MENU }===========*/
 
-.cn-button {
+.menu-button {
   position: relative;
   z-index: 12;
   border: none;
@@ -179,7 +211,7 @@ header {
   -webkit-backface-visibility: hidden;
 }
 
-.cn-wrapper {
+.menu-wrapper {
   position: absolute;
   /* top: 100%; */
   left: 50%;
@@ -203,7 +235,7 @@ header {
 }
 
 /*cover to prevent extra space of anchors from being clickable*/
-.cn-wrapper:after{
+.menu-wrapper:after{
   content:".";
   display:block;
   font-size:2em;
@@ -232,7 +264,7 @@ header {
   pointer-events: auto;
 }
 
-.cn-wrapper li {
+.menu-wrapper li {
   position: absolute;
   top: -40px;
   left: 50%;
@@ -255,7 +287,7 @@ header {
   pointer-events: none;
 }
 
-.cn-wrapper li a {
+.menu-wrapper li a {
   position: absolute;
   right: -7.25em;
   bottom: -7.25em;
@@ -282,7 +314,7 @@ header {
   box-shadow: 0 1px 2px rgba(0,0,0,.2), inset 0 -1px 3px #f6f4ee;
 }
 
-.cn-wrapper li a span {
+.menu-wrapper li a span {
   position: relative;
   top: 1.8em;
   display: block;
@@ -295,9 +327,9 @@ header {
   transform: rotate(180deg);
 }
 
-.cn-wrapper li a:hover,
-.cn-wrapper li a:active,
-.cn-wrapper li a:focus {
+.menu-wrapper li a:hover,
+.menu-wrapper li a:active,
+.menu-wrapper li a:focus {
   background: -webkit-radial-gradient(transparent 35%, #c93c1d 35%);
   background: -moz-radial-gradient(transparent 35%, #c93c1d 35%);
   background: radial-gradient(transparent 35%, #c93c1d 35%);
@@ -358,18 +390,18 @@ header {
   transform: rotate(172deg) skew(60deg);
 }
 
-.no-csstransforms .cn-wrapper {
+.no-csstransforms .menu-wrapper {
   overflow: hidden;
   margin: 10em auto;
   padding: .5em;
   text-align: center;
 }
 
-.no-csstransforms .cn-wrapper ul {
+.no-csstransforms .menu-wrapper ul {
   display: inline-block;
 }
 
-.no-csstransforms .cn-wrapper li {
+.no-csstransforms .menu-wrapper li {
   float: left;
   width: 5em;
   height: 5em;
@@ -379,7 +411,7 @@ header {
   line-height: 5em;
 }
 
-.no-csstransforms .cn-wrapper li a {
+.no-csstransforms .menu-wrapper li a {
   display: block;
   width: 100%;
   height: 100%;
@@ -387,18 +419,18 @@ header {
   text-decoration: none;
 }
 
-.no-csstransforms .cn-wrapper li a:hover,
-.no-csstransforms .cn-wrapper li a:active,
-.no-csstransforms .cn-wrapper li a:focus {
+.no-csstransforms .menu-wrapper li a:hover,
+.no-csstransforms .menu-wrapper li a:active,
+.no-csstransforms .menu-wrapper li a:focus {
   background-color: #f8f8f8;
 }
 
-.no-csstransforms .cn-wrapper li.active a{
+.no-csstransforms .menu-wrapper li.active a{
   background-color: #6F325C;
   color: #fff;
 }
 
-.no-csstransforms .cn-button {
+.no-csstransforms .menu-button {
   display: none;
 }
 
@@ -411,11 +443,11 @@ header {
 }
 
 @media only screen and (max-width: 500px) {
-  .no-ccstransforms .cn-wrapper {
+  .no-ccstransforms .menu-wrapper {
     padding: .5em;
   }
 
-  .no-csstransforms .cn-wrapper li {
+  .no-csstransforms .menu-wrapper li {
     width: 4em;
     height: 4em;
     font-size: .9em;
@@ -424,23 +456,22 @@ header {
 }
 
 @media only screen and (max-width: 480px) {
-  .cn-wrapper {
+  .menu-wrapper {
     font-size: .68em;
   }
 
-  .cn-button {
+  .menu-button {
     font-size: 1em;
   }
 }
 
 @media only screen and (max-width:420px) {
-  .no-csstransforms .cn-wrapper li {
+  .no-csstransforms .menu-wrapper li {
     width: 100%;
     height: 3em;
     line-height: 3em;
   }
 }
-
 
 header .logo a{
     color: #F64;

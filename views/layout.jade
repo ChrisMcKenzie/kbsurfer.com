@@ -9,13 +9,13 @@ html
     link(rel='stylesheet', href='/css/style.css')
   body
     header
-      a#logo.cn-button
+      a#logo.menu-button
         img(src="/img/me-small.jpg", alt="", class="circular shadow")
 
       .information
         | Christopher McKenzie
       
-      #cn-wrapper.cn-wrapper
+      #menu-wrapper.menu-wrapper
         ul
           li
             a(href='mailto:chris@kbsurfer.com')
@@ -24,7 +24,7 @@ html
             a(href='/')
               span Home
         
-      #cn-overlay.cn-overlay
+      #menu-overlay.menu-overlay
       //a(href="/")
         img(src="/img/me-small.jpg", alt="", class="circular shadow")
       br(class="clear")
@@ -53,5 +53,7 @@ html
         a(href="http://nodejs.org", class="node")
           img(src="/img/nodejs.png")
 
-  script(type="text/javascript", src="components/classie/classie.js")
+  script(type="text/javascript", src="components/jquery/jquery.min.js")
+  script(type="text/javascript", src="components/jquery-waypoints/waypoints.min.js")
+  script(type="text/javascript", src="components/jquery-waypoints/shortcuts/sticky-elements/waypoints-sticky.js")
   script(type="text/javascript", src="js/app.js")

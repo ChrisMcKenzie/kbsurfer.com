@@ -1,35 +1,30 @@
 (function(){
- 
-  var button = document.getElementById('logo'),
-    wrapper = document.getElementById('cn-wrapper');
- 
-    //open and close menu when the button is clicked
-  var open = false;
-  button.addEventListener('click', handler, false);
-  button.addEventListener('focus', handler, false);
+  /*************Menu Actions************/
+  var button = $('.menu-button'),
+    wrapper = $('.menu-wrapper'),
+    header = $('header');
 
-  // For clicks elsewhere on the page
-  document.onclick = function() {
-      classie.remove(wrapper, 'opened-nav');
+  $(document).on('click', function(e){
+    wrapper.removeClass('opened-nav');
+  });
+
+  var handler = function(e){
+    if(e){
+      e.stopPropagation();
+    } else {
+      window.event.cancelBubble = true;
+    }
+    wrapper.toggleClass('opened-nav');
   };
- 
-  function handler(e) {
-    if (e) { 
-      e.stopPropagation(); 
-    } else { 
-      window.event.cancelBubble = true; 
-    }
 
-    if(!open) {
-      classie.add(wrapper, 'opened-nav');
-    } else { 
-      classie.remove(wrapper, 'opened-nav');
-    }
-    open = !open;
-  }
+  button.on('click', handler);
+  button.on('focus', handler);
 
-  function closeWrapper() {
-    classie.remove(wrapper, 'opened-nav');
-  }
- 
+  //Header management
+  header.waypoint('sticky', {
+    stuckClass: 'fixed',
+    offset: -50
+  });
+
 })();
+
