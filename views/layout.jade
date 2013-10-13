@@ -6,10 +6,26 @@ html
     meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
     link(rel='stylesheet', href='/css/bootstrap.min.css')
     link(rel='stylesheet', href='/css/font-awesome.min.css')
-    link(rel='stylesheet', href='/css/style.min.css')
+    link(rel='stylesheet', href='/css/style.css')
   body
     header
-      a(href="/")
+      a#logo.cn-button
+        img(src="/img/me-small.jpg", alt="", class="circular shadow")
+
+      .information
+        | Christopher McKenzie
+      
+      #cn-wrapper.cn-wrapper
+        ul
+          li
+            a(href='mailto:chris@kbsurfer.com')
+              span.icon-envelope-alt
+          li
+            a(href='/')
+              span Home
+        
+      #cn-overlay.cn-overlay
+      //a(href="/")
         img(src="/img/me-small.jpg", alt="", class="circular shadow")
       br(class="clear")
     block content
@@ -18,19 +34,24 @@ html
       h5 A little about me
       p
         | My name is <span class="highlight">Christopher McKenzie</span>, I am a <span class="highlight">Web Application Developer</span> In Victorville, Ca; I am currently employed by Excelsior Charter Schools for which I develop proprietary management tools.
-      a(href="https://plus.google.com/112997148822003661332")
-        button(class="google-plus")
-          i(class="icon-google-plus")
-      a(href="https://www.facebook.com/cmckenzie13")
-        button(class="facebook")
-          i(class="icon-facebook")
-      a(href="https://twitter.com/kbsurfer")
-        button(class="twitter")
-          i(class="icon-twitter")
-      a(href="https://github.com/ChrisMcKenzie")
-        button(class="github")
-          i(class="icon-github-alt")
-      a(href="http://digitalocean.com", class="hosting")
-        img(src="/img/digitalocean-badge-gray.png")
-      a(href="http://nodejs.org", class="node")
-        img(src="/img/nodejs.png")
+      .foot.left
+        a(href="https://plus.google.com/112997148822003661332")
+          button(class="google-plus")
+            i(class="icon-google-plus")
+        a(href="https://www.facebook.com/cmckenzie13")
+          button(class="facebook")
+            i(class="icon-facebook")
+        a(href="https://twitter.com/kbsurfer")
+          button(class="twitter")
+            i(class="icon-twitter")
+        a(href="https://github.com/ChrisMcKenzie")
+          button(class="github")
+            i(class="icon-github-alt")
+      .foot.right
+        a(href="http://digitalocean.com", class="hosting")
+          img(src="/img/digitalocean-badge-gray.png")
+        a(href="http://nodejs.org", class="node")
+          img(src="/img/nodejs.png")
+
+  script(type="text/javascript", src="components/classie/classie.js")
+  script(type="text/javascript", src="js/app.js")
