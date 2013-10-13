@@ -4,25 +4,14 @@ html
     title= 'Keyboardsurfer'
     meta(charset='utf-8')
     meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
-    link(rel='stylesheet', href='/css/bootstrap.min.css')
-    link(rel='stylesheet', href='/css/font-awesome.min.css')
-    link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href='/css/style.min.css')
   body
     header
-      a#logo.menu-button
+      a.logo(href="/")
         img(src="/img/me-small.jpg", alt="", class="circular shadow")
 
       .information
         | Christopher McKenzie
-      
-      #menu-wrapper.menu-wrapper
-        ul
-          li
-            a(href='mailto:chris@kbsurfer.com')
-              span.icon-envelope-alt
-          li
-            a(href='/')
-              span Home
         
       #menu-overlay.menu-overlay
       //a(href="/")
