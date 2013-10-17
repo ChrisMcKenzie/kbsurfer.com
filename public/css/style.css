@@ -1,3 +1,37 @@
+/*! 
+ * kbsurfer.com Stylesheet 
+ *
+ * Author - Christopher McKenzie
+ * -------------------------------------------
+ * Email: chris@kbsurfer.com
+ * Twitter: @kbsurfer
+ * 
+ * License
+ * -------------------------------------------
+ *
+ * The MIT License (MIT)
+ * 
+ * Copyright (c) [2013] [Christopher McKenzie]
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ *
+ */
+
 body {
     font: 16px/28px 'Open Sans', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, "Lucida Grande", sans-serif;
     background: #efede7;
@@ -147,61 +181,100 @@ button.light:hover, a.btn.light:hover {
 
 /*=========={ HEADER }==========*/
 header {
-  width: auto;
+  width: 100%;
   height: 250px;
   max-width: 100%;
   margin: 0 auto;
   /* margin-top: 50px; */
   margin-bottom: 20px;
-  padding: 50px 30px;
-  background: -moz-linear-gradient(transparent 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0.1) 50%,rgba(0,0,0,0.3) 100%);, url(../img/bg3.jpg) no-repeat center top;
+  padding: 0;
+
+  /*padding: 50px 30px;*/
+  /*background: -moz-linear-gradient(transparent 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0.1) 50%,rgba(0,0,0,0.3) 100%);, url(../img/bg3.jpg) no-repeat center top;
   background: linear-gradient(transparent 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0.1) 50%,rgba(0,0,0,0.3) 100%), url(../img/bg3.jpg) no-repeat center top;
   -webkit-background-size: 100% 100%;  
   -moz-background-size: 100% 100%;  
-  background-size: 100% 100%;
-  position: relative;
+  background-size: 100% 100%;*/
   text-align: center;
   -webkit-box-sizing: border-box;     /* Safari/Chrome, other WebKit */
      -moz-box-sizing: border-box;     /* Firefox, other Gecko */
           box-sizing: border-box;     /* Opera/IE 8+ */
-}     
+  -webkit-transition: height 0.3s;
+  -moz-transition: height 0.3s;
+  transition: height 0.3s;
+  z-index: -2;
+}    
 
-header.fixed {
-  width: 100%;
-  height: 65px;
-  padding: 5px;
+header .title {
+  position: absolute;
+  top: 40px;
+  left:50%;
+  width: 250px;
+  margin-left: -125px;
+  z-index: 12;
+} 
+
+header .overlay {
   position: fixed;
+  top:0;
+  left: 0;
+  height: 0;
+  width: 100%;
+  background: rgba(0,0,0, 0.3);
+  z-index: 11;
+  -webkit-transition: height 0.3s;
+  -moz-transition: height 0.3s;
+  transition: height 0.3s;
+}
+
+header.fixed .overlay{
+  height: 50px;
+}
+
+header .background {
+  position: relative;
   top: 0;
   left: 0;
+  z-index: 10;
+}
+
+header.fixed .background {
+  position: fixed;
+  top: -200px;
+  right: 0;
+}
+
+header .background img {
+  width: 100%;
+  height: 250px;
+}
+
+header.fixed .title {
+  position: fixed;
+  top: 5px;
+  left: 140px;
+  height: 40px;
+  width: 400px;
   text-align: left;
-  background: rgba(0,0,0,.7);
-  background-position: 100;
-  z-index: 1000;
 }
 
-header.fixed .logo {
-  width: 45px;
-  height: 45px;
+header.fixed .title .logo {
   float: left;
-  margin-left: 10px;
 }
 
-header.fixed .logo img {
-  width: 45px;
-  height: 45px;
+header.fixed .title .logo img{
+  position: relative;
+  left:0;
+  height: 40px;
+  width: 40px;
+}
+
+header.fixed .title .information {
   margin-top: 5px;
+  margin-left: 50px
 }
-
-header.fixed .information { 
-  /* float: left; */
-  width: 300px;
-  margin: 15px 70px;
-}
-
-/*========={ HEADER MENU }===========*/
 
 header .logo {
-  position: relative;
   z-index: 12;
   border: none;
   text-align: center;
@@ -221,7 +294,7 @@ header .logo a:hover {
   color: #aaa28c;
 }
 
-.circular.shadow {
+header .logo img {
   box-shadow: 0 0 8px rgba(0, 0, 0, .8);
   -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
   -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
@@ -230,7 +303,8 @@ header .logo a:hover {
   -o-transition:all .25s ease-in-out;
   transition:all .25s ease-in-out;
 }
-.circular {
+
+header .logo img {
   margin: 0 auto;
   width: 100px;
   height: 100px;
@@ -239,7 +313,7 @@ header .logo a:hover {
   -moz-border-radius: 150px;
 }
 
-.circular.shadow:hover {
+header .logo > img:hover {
   box-shadow: 0 0 8px #ff6644;
   -webkit-box-shadow: 0 0 15px #ff6644;
   -moz-box-shadow: 0 0 15px #ff6644;

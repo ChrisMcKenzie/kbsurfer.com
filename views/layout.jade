@@ -7,16 +7,15 @@ html
     link(rel='stylesheet', href='/css/all.min.css')
   body
     header
-      a.logo(href="/")
-        img(src="/img/me-small.jpg", alt="", class="circular shadow")
+      .overlay
+      .title
+        a.logo(href="/")
+          img(src="/img/me-small.jpg", alt="")
 
-      .information
-        | Christopher McKenzie
-        
-      #menu-overlay.menu-overlay
-      //a(href="/")
-        img(src="/img/me-small.jpg", alt="", class="circular shadow")
-      br(class="clear")
+        .information
+          | Christopher McKenzie
+      .background
+        img(src="/img/bg3.jpg", alt="")
     block content
 
     footer
@@ -42,7 +41,5 @@ html
         a(href="http://nodejs.org", class="node")
           img(src="/img/nodejs.png")
 
-  script(type="text/javascript", src="/components/jquery/jquery.min.js")
-  script(type="text/javascript", src="/components/jquery-waypoints/waypoints.min.js")
-  script(type="text/javascript", src="/components/jquery-waypoints/shortcuts/sticky-elements/waypoints-sticky.js")
-  script(type="text/javascript", src="/js/app.js")
+  script(type="text/javascript", src="/components/classie/classie.js")
+  script(type="text/javascript", src="/js/app.min.js")
