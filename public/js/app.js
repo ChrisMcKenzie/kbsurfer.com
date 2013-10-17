@@ -6,7 +6,7 @@
         background = document.querySelector('.background'),
         title = document.querySelector('.title'),
         didScroll = false,
-        changeHeaderOn = 200;
+        changeHeaderOn = 250;
  
     var init = function() {
         window.addEventListener( 'scroll', function( event ) {
