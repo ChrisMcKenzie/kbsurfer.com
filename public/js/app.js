@@ -2,9 +2,6 @@
  
     var docElem = document.documentElement,
         header = document.querySelector( 'header' ),
-        overlay = document.querySelector('.overlay'),
-        background = document.querySelector('.background'),
-        title = document.querySelector('.title'),
         didScroll = false,
         changeHeaderOn = 250;
  
@@ -12,20 +9,16 @@
         window.addEventListener( 'scroll', function( event ) {
             if( !didScroll ) {
                 didScroll = true;
-                setTimeout( scrollPage, 50 );
+                scrollPage();
             }
         }, false );
     };
  
     function scrollPage() {
-        var sy = scrollY();
-        //console.log(sy);
-        if ( sy >= changeHeaderOn ) {
-      		console.log('change header');
+        if ( scrollY() >= changeHeaderOn ) {
           classie.add( header, 'fixed' );
         }
         else {
-        	console.log('No change to header');
           classie.remove( header, 'fixed' );
         }
         didScroll = false;
