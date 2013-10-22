@@ -220,10 +220,9 @@ header .overlay {
   width: 100%;
   background: rgba(0,0,0, 0.5);
   z-index: 11;
-  -webkit-transition: height .2s;
-  -moz-transition: height .2s;
-  transition: height .2s;
-  transform: translateZ(0);
+  -webkit-transition: height 0.3s;
+  -moz-transition: height 0.3s;
+  transition: height 0.3s;
 }
 
 header.fixed .overlay{
@@ -235,10 +234,9 @@ header .background {
   top: -250px;
   left: 0;
   z-index: 10;
-  -webkit-transition: height .2s, top .2s;
-  -moz-transition: height .2s, top .2s;
-  transition: height .2s, top .2s;
-  transform: translateZ(0);
+  -webkit-transition: height .3s, top .3s;
+  -moz-transition: height .3s, top .3s;
+  transition: height .3s, top .3s;
 }
 
 header.fixed .background {
@@ -250,11 +248,7 @@ header.fixed .background {
 header .background img {
   width: 100%;
   height: 250px;
-<<<<<<< HEAD
   opacity: 0.7;
-=======
-  opacity: .8;
->>>>>>> 09b8bf63bb12b974e9fc62ea07a2aa0557625a22
 }
 
 header.fixed .title {
@@ -695,7 +689,6 @@ button.github:hover {
 
 /*=========={ MEDIA QUERIES }==========*/
 @media only screen and (max-width: 767px) {
-<<<<<<< HEAD
     body {
       padding: 0;
     }
@@ -736,20 +729,12 @@ button.github:hover {
       height: 40px;
       width: 400px;
       text-align: left;
-=======
-    body { padding: 0; }
-    section, section.quote {
-        padding: 20px;
-        width: auto;
-        margin-bottom: 20px;
->>>>>>> 09b8bf63bb12b974e9fc62ea07a2aa0557625a22
     }
 
     header .title .logo {
       float: left;
     }
 
-<<<<<<< HEAD
     header .title .logo img{
       position: relative;
       left:0;
@@ -760,11 +745,6 @@ button.github:hover {
     header .title .information {
       margin-top: 5px;
       margin-left: 50px
-=======
-    header {
-        margin-bottom: 30px;
-        padding: 0;
->>>>>>> 09b8bf63bb12b974e9fc62ea07a2aa0557625a22
     }
 
     section, .post-image, .post-video {

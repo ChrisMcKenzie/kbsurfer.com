@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {"version":3,"file":"public/js/app.min.js","sources":["app.js"],"names":["docElem","document","documentElement","header","querySelector","ticking","changeHeaderOn","onScroll","update","requestTick","sy","window","pageYOffset","scrollTop","classie","add","remove","requestAnimationFrame","addEventListener"],"mappings":"CAAA,WAEI,GAAIA,GAAUC,SAASC,gBACnBC,EAASF,SAASG,cAAe,UAIjCC,GAHUJ,SAASG,cAAc,YACpBH,SAASG,cAAc,eAC5BH,SAASG,cAAc,WACrB,GACVE,EAAiB,IAEjBC,EAAW,WACPC,IACAC,KAGJD,EAAS,WACTH,GAAU,CACV,IAAIK,GAAKC,OAAOC,aAAeZ,EAAQa,SAElCH,IAAMJ,EACPQ,QAAQC,IAAKZ,EAAQ,SAGrBW,QAAQE,OAAQb,EAAQ,UAI5BM,EAAc,WACVJ,GACAY,sBAAsBT,GAE1BH,GAAU,EAGdM,QAAOO,iBAAkB,SAAUX,GAAU"}
+=======
+{"version":3,"file":"public/js/app.min.js","sources":["app.js"],"names":["scrollPage","scrollY","changeHeaderOn","classie","add","header","remove","didScroll","window","pageYOffset","docElem","scrollTop","document","documentElement","querySelector","init","addEventListener"],"mappings":"CAAA,WAgBI,QAASA,KACAC,KAAaC,EAChBC,QAAQC,IAAKC,EAAQ,SAGrBF,QAAQG,OAAQD,EAAQ,SAE1BE,GAAY,EAGhB,QAASN,KACL,MAAOO,QAAOC,aAAeC,EAAQC,UAzBzC,GAAID,GAAUE,SAASC,gBACnBR,EAASO,SAASE,cAAe,UACjCP,GAAY,EACZL,EAAiB,IAEjBa,EAAO,WACPP,OAAOQ,iBAAkB,SAAU,WAC1BT,IACDA,GAAY,EACZP,OAEL,GAiBPe"}
+>>>>>>> 09b8bf63bb12b974e9fc62ea07a2aa0557625a22
 =======
 {"version":3,"file":"public/js/app.min.js","sources":["app.js"],"names":["scrollPage","scrollY","changeHeaderOn","classie","add","header","remove","didScroll","window","pageYOffset","docElem","scrollTop","document","documentElement","querySelector","init","addEventListener"],"mappings":"CAAA,WAgBI,QAASA,KACAC,KAAaC,EAChBC,QAAQC,IAAKC,EAAQ,SAGrBF,QAAQG,OAAQD,EAAQ,SAE1BE,GAAY,EAGhB,QAASN,KACL,MAAOO,QAAOC,aAAeC,EAAQC,UAzBzC,GAAID,GAAUE,SAASC,gBACnBR,EAASO,SAASE,cAAe,UACjCP,GAAY,EACZL,EAAiB,IAEjBa,EAAO,WACPP,OAAOQ,iBAAkB,SAAU,WAC1BT,IACDA,GAAY,EACZP,OAEL,GAiBPe"}
 >>>>>>> 09b8bf63bb12b974e9fc62ea07a2aa0557625a22
