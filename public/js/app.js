@@ -5,37 +5,34 @@
         overlay = document.querySelector('.overlay'),
         background = document.querySelector('.background'),
         title = document.querySelector('.title'),
-        didScroll = false,
+        ticking = false,
         changeHeaderOn = 250;
+
+    var onScroll = function() {
+            update();
+            requestTick();
+    }
  
-    var init = function() {
-        window.addEventListener( 'scroll', function( event ) {
-            if( !didScroll ) {
-                didScroll = true;
-                setTimeout( scrollPage, 50 );
-            }
-        }, false );
-    };
- 
-    function scrollPage() {
-        var sy = scrollY();
+    var update = function() {
+        ticking = false;
+        var sy = window.pageYOffset || docElem.scrollTop;
         //console.log(sy);
         if ( sy >= changeHeaderOn ) {
-      		console.log('change header');
-          classie.add( header, 'fixed' );
+            classie.add( header, 'fixed' );
         }
         else {
-        	console.log('No change to header');
-          classie.remove( header, 'fixed' );
+            classie.remove( header, 'fixed' );
         }
-        didScroll = false;
+    }
+
+    var requestTick = function() {
+        if(!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
     }
  
-    function scrollY() {
-        return window.pageYOffset || docElem.scrollTop;
-    }
- 
-    init();
+    window.addEventListener( 'scroll', onScroll, false );
  
 })();
 
