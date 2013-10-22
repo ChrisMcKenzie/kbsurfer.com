@@ -2,15 +2,12 @@
  
     var docElem = document.documentElement,
         header = document.querySelector( 'header' ),
-        overlay = document.querySelector('.overlay'),
-        background = document.querySelector('.background'),
-        title = document.querySelector('.title'),
         ticking = false,
         changeHeaderOn = 250;
 
     var onScroll = function() {
-            update();
-            requestTick();
+        update();
+        requestTick();
     }
 
     var update = function() {
@@ -19,9 +16,9 @@
         //console.log(sy);
         if ( sy >= changeHeaderOn ) {
             classie.add( header, 'fixed' );
-        }
-        else {
+        } else {
             classie.remove( header, 'fixed' );
+        }
     }
 
     var requestTick = function() {
