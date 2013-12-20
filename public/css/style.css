@@ -1,18 +1,18 @@
-/*! 
- * kbsurfer.com Stylesheet 
+/*!
+ * kbsurfer.com Stylesheet
  *
  * Author - Christopher McKenzie
  * -------------------------------------------
  * Email: chris@kbsurfer.com
  * Twitter: @kbsurfer
- * 
+ *
  * License
  * -------------------------------------------
  *
  * The MIT License (MIT)
- * 
+ *
  * Copyright (c) [2013] [Christopher McKenzie]
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
  * this software and associated documentation files (the "Software"), to deal in
  * the Software without restriction, including without limitation the rights to
@@ -140,6 +140,7 @@ button, a.btn {
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
+    text-shadow: none;
     -webkit-border-radius: 3px;
        -moz-border-radius: 3px;
             border-radius: 3px;
@@ -152,6 +153,7 @@ button, a.btn {
 }
 
 button:hover, a.btn:hover {
+    color: #ececec;
     background: #c93c1d;
     -webkit-transition:all .25s ease-in-out;
     -moz-transition:all .25s ease-in-out;
@@ -193,15 +195,15 @@ header {
   background: url(../img/bg3.jpg) no-repeat center top;
   background: -moz-linear-gradient(transparent 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0.1) 50%,rgba(0,0,0,0.3) 100%) url(../img/bg3.jpg) no-repeat center top;
   background: linear-gradient(transparent 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0.1) 50%,rgba(0,0,0,0.3) 100%), url(../img/bg3.jpg) no-repeat center top;
-  -webkit-background-size: 100% 100%;  
-  -moz-background-size: 100% 100%;  
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
   background-size: 100% 100%;
   text-align: center;
   -webkit-transition: height .3s, top .3s;
   -moz-transition: height .3s, top .3s;
   transition: height .3s, top .3s;
   z-index: -2;
-}    
+}
 
 header .title {
   position: absolute;
@@ -210,7 +212,7 @@ header .title {
   width: 250px;
   margin-left: -125px;
   z-index: 12;
-} 
+}
 
 header .overlay {
   position: fixed;
@@ -782,7 +784,7 @@ button.github:hover {
     .foot {
       width: 100%;
       /* margin: 10px; */
-    
+
       margin-top: 20px;
       margin-bottom: 10px;
       text-align: center;
