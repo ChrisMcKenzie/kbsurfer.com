@@ -32,6 +32,8 @@
  *
  */
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
 body {
     font: 16px/28px 'Open Sans', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, "Lucida Grande", sans-serif;
     background: #efede7;
@@ -192,12 +194,12 @@ header {
   padding: 0;
   overflow: hidden;
   /*padding: 50px 30px;*/
-  background: url(../img/bg3.jpg) no-repeat center top;
+  /*background: url(../img/bg3.jpg) no-repeat center top;
   background: -moz-linear-gradient(transparent 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0.1) 50%,rgba(0,0,0,0.3) 100%) url(../img/bg3.jpg) no-repeat center top;
   background: linear-gradient(transparent 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0.1) 50%,rgba(0,0,0,0.3) 100%), url(../img/bg3.jpg) no-repeat center top;
   -webkit-background-size: 100% 100%;
   -moz-background-size: 100% 100%;
-  background-size: 100% 100%;
+  background-size: 100% 100%;*/
   text-align: center;
   -webkit-transition: height .3s, top .3s;
   -moz-transition: height .3s, top .3s;
@@ -209,8 +211,8 @@ header .title {
   position: absolute;
   top: 40px;
   left:50%;
-  width: 250px;
-  margin-left: -125px;
+  width: 400px;
+  margin-left: -200px;
   z-index: 12;
 }
 
@@ -357,9 +359,10 @@ header nav ul li a:hover {
 
 header .information {
   margin-top: 20px;
-  color: #fff;
-  text-shadow: rgba(0, 0, 0, 0.701961) 0px 1px 0px;
-  font-size: 18pt;
+  color: #3c3c3c;
+  text-shadow: rgba(255, 255, 255, 1) 1px 1px 0px;
+  font-size: 24pt;
+  font-weight: 300;
 }
 
 
@@ -448,6 +451,8 @@ section .date:hover {
 }
 
 section .title {
+    font-weight: 300;
+    font-size: 24pt;
     margin-bottom: 30px;
     max-width: 80%;
 }

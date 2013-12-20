@@ -10,7 +10,7 @@ _gaq.push(['_trackPageview']);
         ticking = false,
         changeHeaderOn = 250; // Distance in pixel to scroll from top before displaying fixed header
 
-    // Event Handler for Scrolling
+/*    // Event Handler for Scrolling
     var onScroll = function() {
         update();
         requestTick();
@@ -42,7 +42,7 @@ _gaq.push(['_trackPageview']);
     }
 
     // And the kick-off!
-    window.addEventListener( 'scroll', onScroll, false );
+    window.addEventListener( 'scroll', onScroll, false );*/
 
     // let's get our analytics on!
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
