@@ -58,6 +58,7 @@ app.configure('production', function(){
 });
 
 app.get('/', function (req, res) { res.render('index');});
+app.get('/about', function(req, res) { res.render('about');});
 
 app.post( '/push', function( req, res ) {
   // Do git pull of posts!
